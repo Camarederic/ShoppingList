@@ -1,5 +1,7 @@
 package com.example.shoppinglist.domain
 
+import androidx.lifecycle.LiveData
+
 // 7) Создаем интерфейс репозитория, где будут храниться методы
 interface ShopListRepository {
 
@@ -11,7 +13,7 @@ interface ShopListRepository {
 
     fun getShopItem(shopItemId: Int):ShopItem
 
-    fun getShopList():List<ShopItem>
+    fun getShopList():LiveData<List<ShopItem>> // 41) Добавляем LiveData
 
 
 }
